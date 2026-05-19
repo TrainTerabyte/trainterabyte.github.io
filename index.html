@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<style>
+body{
+    background:#17212b;
+    color:white;
+    font-family:sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.copy-btn{
+    background:#2AABEE;
+    color:white;
+    border:none;
+    padding:18px 32px;
+    border-radius:14px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.copy-btn:active{
+    transform:scale(0.96);
+}
+</style>
 </head>
+
 <body>
 
-<button onclick="copyText()">Скопировать</button>
+<button class="copy-btn" onclick="copyText()">
+    СКОПИРОВАТЬ
+</button>
 
 <script>
-function copyText() {
-  navigator.clipboard.writeText("Текст скопирован");
-  Telegram.WebApp.showAlert("Скопировано");
+Telegram.WebApp.expand();
+
+function copyText(){
+    navigator.clipboard.writeText("Текст скопирован");
+
+    Telegram.WebApp.showAlert("Скопировано");
 }
 </script>
 
